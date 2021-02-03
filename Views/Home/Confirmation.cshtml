@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = Model.Title + " has been added to the the collection.";
+}
+@model BaconSale.Models.Movie
+
+
+<div>
+    <h2 class="text-center">THANK YOU!</h2>
+</div>
+<br /><br />
+<div>
+    <p class="text-center">
+        @if (Model.Title == "Independence Day")
+        {
+            @:Unfortunately that film will not be displayed in our collection.
+        }
+    </p>
+    <p class="text-center">Click <a asp-action="MyMovies">HERE</a> to see our collection.</p>
+    
+</div>

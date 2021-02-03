@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Movie Collection";
+}
+@model IEnumerable<BaconSale.Models.Movie>
+
+<div class="col-12 text-center">
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr><th>Category</th><th>Title</th><th>Year</th><th>Director</th><th>Rating</th><th>Edited?</th><th>Lent To</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+            @foreach (BaconSale.Models.Movie x in Model)
+            {
+            <tr>
+                <td>@x.Category</td>
+                <td>@x.Title</td>
+                <td>@x.Year</td> 
+                <td>@x.Director</td>
+                <td>@x.Rating</td>
+                <td>@x.Edited</td>
+                <td>@x.LentTo</td>
+                <td>@x.Notes</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

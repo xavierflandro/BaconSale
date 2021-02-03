@@ -1,0 +1,65 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Add a Movie";
+}
+@model BaconSale.Models.Movie;
+
+<div class="col-12">
+    <form asp-action="AddMovies" method="post">
+        <div>
+            <label asp-for="Category">Category:</label>
+            <input asp-for="Category" />
+        </div>
+        <br />
+        <div>
+            <label asp-for="Title">Title:</label>
+            <input asp-for="Title" />
+        </div>
+        <br />
+        <div>
+            <label asp-for="Year">Year:</label>
+            <input asp-for="Year" />
+        </div>
+        <br />
+        <div>
+            <label asp-for="Director">Director:</label>
+            <input asp-for="Director" />
+        </div>
+        <br />
+        <div>
+            <label asp-for="Rating">Rating:</label>
+            <select asp-for="Rating">
+                <option value="" disabled>Select One</option>
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG-13">PG-13</option>
+                <option value="R">R</option>
+            </select>
+        </div>
+        <br />
+        <div>
+            <label asp-for="Edited">Is this film edited?:</label>
+            <select asp-for="Edited">
+                <option value="" disabled>Select One</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+        <br />
+        <div>
+            <label asp-for="LentTo">Lent To:</label>
+            <input asp-for="LentTo" />
+        </div>
+        <br />
+        <div>
+            <label asp-for="Notes">Notes:</label>
+            <input asp-for="Notes" />
+        </div>
+        <br />
+        <div class="text-danger" asp-validation-summary="All"></div>
+        <br />
+        <button type="submit">Add your Movie</button>
+    </form>
+</div>
