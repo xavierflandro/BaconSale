@@ -17,28 +17,28 @@ namespace BaconSale.Controllers
         {
             _logger = logger;
         }
-
+        //  Home Action
         public IActionResult Index()
         {
             return View();
         }
-
+        //  Direct user to MyPodcasts view on get request
         public IActionResult MyPodcasts()
         {
             return View();
         }
-
+        //  Pass temporary storage into MyMovies view and exclude objrect with title "Independence Day
         public IActionResult MyMovies()
         {
-            return View(TempStorage.Movies.Where(m => m.Title != "Independance Day"));
+            return View(TempStorage.Movies.Where(m => m.Title != "Independence Day"));
         }
-
+        //  Direct user to AddMovie view on get request
         [HttpGet]
         public IActionResult AddMovies()
         {
             return View();
         }
-
+        //  Direct user to Confirmation view, passing form data on post request (form submission)
         [HttpPost]
         public IActionResult AddMovies(Movie movie)
         {
