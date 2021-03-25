@@ -4,25 +4,34 @@
 @{
     ViewBag.Title = "Movie Collection";
 }
-@model IEnumerable<BaconSale.Models.Movie>
+@model IEnumerable<Movie>
 
 <div class="col-12 text-center">
     <table class="table table-bordered table-striped table-sm">
-        <thead>
-            <tr><th>Category</th><th>Title</th><th>Year</th><th>Director</th><th>Rating</th><th>Edited?</th><th>Lent To</th><th>Notes</th></tr>
+        <thead class="thead-dark">
+            <tr><th>Category</th><th>Title</th><th>Year</th><th>Director</th><th>Rating</th><th>Edited?</th><th>Lent To</th><th>Notes</th><th>Edit</th><th>Delete</th></tr>
         </thead>
         <tbody>
-            @foreach (BaconSale.Models.Movie x in Model)
+            @foreach (var x in Model)
             {
             <tr>
                 <td>@x.Category</td>
                 <td>@x.Title</td>
-                <td>@x.Year</td> 
+                <td>@x.Year</td>
                 <td>@x.Director</td>
                 <td>@x.Rating</td>
                 <td>@x.Edited</td>
                 <td>@x.LentTo</td>
                 <td>@x.Notes</td>
+                <td>
+                    <a class="btn btn-success" asp-action="EditMovie" asp-route-movieId="@x.MovieId">Edit</a>
+                </td>
+                <td>
+                    <form action="DeleteMovie" method="post">
+                        <input type="hidden" name="movieId" value="@x.MovieId"/>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
             </tr>
             }
         </tbody>

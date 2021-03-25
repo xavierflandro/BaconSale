@@ -24,6 +24,10 @@ a {
   border-color: #1861ac;
 }
 
+/*Custom Styles
+---------------------------------------------------*/
+
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -67,10 +71,21 @@ form {
     width: 100%;
     margin: auto;
 }
+form-group {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
 form label {
     min-width: 10rem;
     margin-left:1rem;
+    text-align: left;
 }
+form input {
+    text-align: right;
+}
+
 button {
     border-radius: 5px;
 }

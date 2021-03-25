@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Changes to " + Model.Title + " have been successfully made.";
+}
+@model Movie
+
+
+<div>
+    <h2 class="text-center">THANK YOU!</h2>
+</div>
+<br /><br />
+<div>
+    <p class="text-center">
+        @if (Model.Title == "Independence Day")
+        {
+            @:Unfortunately that film will not be displayed in our collection.
+        }
+    </p>
+    <p class="text-center">Click <a asp-action="MyMovies">HERE</a> to see our collection.</p>
+    
+</div>

@@ -8,9 +8,13 @@ namespace BaconSale.Models
 {
     public class Movie
     {
-        //  Properties of the Movie class, gettters and setters
+        //  Properties of the Movie class, getters and setters
         //  all but Edited, LentTo, and Notes are required
         //  Notes prop has a max char length of 25 with associated error message
+        [Key]
+        [Required]
+        public int MovieId { get; set; }
+
         [Required]
         public string Category { get; set; }
 
